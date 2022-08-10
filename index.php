@@ -28,7 +28,7 @@
         <th>Nama Toko</th>
     </tr>
     <?php
-    $db = new PDO('mysql:host=localhost;dbname=rumah_reza', 'root', 'RudiSQLoioi1!');
+    $db = new PDO('mysql:host=localhost;dbname=rumah_reza', 'root', '');
     $query = $db->query("SELECT * FROM data_material");
     while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
         echo "<tr>";
