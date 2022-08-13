@@ -1,2 +1,39 @@
 hello
 bener
+
+temp
+ 
+    <?php
+    $db = new PDO(
+      'mysql:host=localhost;
+      dbname=rumah_reza','root', '1234');
+    $query = $db->query("SELECT * FROM data_material");
+    while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+        echo "<tr>";
+        echo "<td>" . $row['tanggal'] . "</td>";
+        echo "<td>" . $row['nama_bahan'] . "</td>";
+        echo "<td>" . $row['harga_bahan'] . "</td>";
+        echo "<td>" . $row['jumlah_bahan'] . "</td>";
+        echo "<td>" . $row['harga'] . "</td>";
+        echo "<td><img src='" . $row['foto_nota'] . "'></td>";
+        echo "<td>" . $row['nama_toko'] . "</td>";
+        echo "</tr>";
+    }
+    ?>
+    
+    
+    
+        
+    <?php
+$dbname = 'rumah_reza';
+$dbuser = 'root';
+$dbpass = '1234';
+$dbhost = 'localhost';
+$connect = mysqli_connect($dbhost, $dbuser, $dbpass) or die("Unable to connect to '$dbhost'");
+mysql_select_db($dbname) or die("Could not open the database '$dbname'");
+$result = mysql_query("SELECT * FROM data_material");
+while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
+    printf("ID: %s  Name: %s <br>", $row[0], $row[1]);
+}
+?>
+    
